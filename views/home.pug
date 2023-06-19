@@ -1,0 +1,21 @@
+html
+
+  head
+    title=Home
+
+  body
+    h1 Questi sono gli userbot registrati
+
+    if accounts
+      ul
+        each account in accounts
+          li(style="font-size:25px;")= account
+          a(href='/accounts/' + account + '/start-userbot' style="font-size:25px;") Avvia userbot 
+          a(href='/accounts/' + account style="font-size:25px;") Dettagli 
+          a(href='/accounts/' + account + '/edit' style="font-size:25px;") Modifica 
+          a(href='/delete-account?account=' + account style="font-size:25px;") Elimina 
+
+    else 
+      p Nessun userbot registrato!
+
+    button(onClick='window.location.href="/add-account"' style="font-size:30px") Aggiungi account

@@ -1,0 +1,26 @@
+html
+
+  head
+    title=Dettagli
+    meta(http-equiv="refresh" content="5")
+
+  body
+    h1 Ecco tutti i parametri dell'account
+    button(onClick='window.location.href="/"' style="font-size:30px") Torna alla Home
+    ul
+      each val, key in details
+        li= key + ': ' + val + ';' 
+    a(href='/accounts/' + details.username + '/edit') Modifica i parametri dell'account
+    br
+    if lines
+      h1 Questo è l'output dell'userbot
+      a(href='/' + details.username + '/output.log') Visualizza i logs completi
+      br
+      a(href='/accounts/' + details.username + '/kill-userbot') Ferma l'userbot
+      br
+      br
+      div(class="scroll" style="color:white;background-color:DarkBlue;width:600px;height:150px;overflow-x:hidden;overflow-y:auto;text-align:left;padding:20px;display:flex;flex-direction:column-reverse;font-family:monospace;") 
+        each line of lines
+          p= line
+    else
+      a(href='/accounts/' + details.username + '/start-userbot') Avvia l'userbot

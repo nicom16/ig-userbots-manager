@@ -1,0 +1,117 @@
+html 
+  
+  head
+    title Aggiungi un nuovo account Instagram</title>
+  
+  body
+    h1 Compila il form con i dati necessari
+    form(action="/accounts/" + account + "/edit" method="post")
+      input(type="radio" id="follow" name="action" value="follow")
+      label(for="follow") Follow
+      br
+      br
+      input(type="radio" id="stories" name="action" value="stories")
+      label(for="stories") Visualizza stories
+      br
+      br
+      input(type="radio" id="dms" name="action" value="dms")
+      label(for="dms") Invia messaggio
+      br
+      br
+      label(for="username") Username
+      br
+      input(type="text" id="username" name="username")
+      br
+      br
+      label(for="password") Password
+      br
+      input(type="text" id="password" name="password")
+      br
+      hr
+      br
+      br
+      label(for="followersOf") Profilo da cui estrarre gli utenti
+      br
+      input(type="text" id="followersOf" name="followersOf")
+      br
+      br
+      label(for="followersPages") Pagine di followers da scaricare (ogni pagina contiene 50 utenti, MAX consigliato 500, super MAX rischioso 700)
+      br
+      input(type="text" id="followersPages" name="followersPages")
+      br
+      br
+      label(for="followUserMinFollowers") Minimo numero di followers degli account da seguire
+      br
+      input(type="text" id="followUserMinFollowers" name="followUserMinFollowers")
+      br
+      br 
+      label(for="followUserMaxFollowers") Massimo numero di followers degli account da seguire
+      br
+      input(type="text" id="followUserMaxFollowers" name="followUserMaxFollowers")
+      br
+      hr
+      br
+      br
+      label(for="fixedMaxFollows") Numero fisso di follows prima di mettersi in pausa (MAX = 25/30)
+      br
+      input(type="text" id="fixedMaxFollows" name="fixedMaxFollows")
+      br
+      br
+      label(for="fixedSleepBetweenMaxFollows") Ore (mezz'ora = 0,5) di pausa fra un gruppo di follows ed il successivo (Consigliato: superiore alle 2/2,5 ore)
+      br
+      input(type="text" id="fixedSleepBetweenMaxFollows" name="fixedSleepBetweenMaxFollows")
+      br
+      br
+      label(for="maxFollowsPerHour") Numero massimo di follows in un'ora (MAX = 20/30)
+      br
+      input(type="text" id="maxFollowsPerHour" name="maxFollowsPerHour")
+      br 
+      br
+      label(for="maxFollowsPerDay") Numero massimo di follows in 24 ore (MAX = 100/150)
+      br
+      input(type="text" id="maxFollowsPerDay" name="maxFollowsPerDay")
+      br
+      br
+      label(for="maxLikesPerDay") Numero massimo di likes in 24 ore (MAX = 400/500)
+      br
+      input(type="text" id="maxLikesPerDay" name="maxLikesPerDay")
+      br
+      hr
+      br
+      br
+      label(for="storiesFixedCicles") Cicli di stories
+      br
+      input(type="text" id="storiesFixedCicles" name="storiesFixedCicles")
+      br
+      br
+      label(for="maxStoriesPerHour") Numero massimo di stories in un'ora (MAX = 100/150)
+      br
+      input(type="text" id="maxStoriesPerHour" name="maxStoriesPerHour")
+      br
+      hr
+      br
+      br
+      label(for="dmsFixedCicles") Cicli di messaggi diretti
+      br
+      input(type="text" id="dmsFixedCicles" name="dmsFixedCicles")
+      br
+      br
+      label(for="maxDmsPerHour") Numero massimo di messaggi in un'ora (MAX = 10)
+      br
+      input(type="text" id="maxDmsPerHour" name="maxDmsPerHour")
+      br
+      br
+      label(for="messages") Messaggi da inviare separati da " / "
+      br
+      input(type="text" id="messages" name="messages")
+      br
+      hr
+      br
+      br
+      label(for="proxy") Indirizzo IP server proxy
+      br
+      input(type="text" id="proxy" name="proxy")
+      br
+      br
+      br
+      button(type="submit" style="font-size:30px") Modifica parametri
